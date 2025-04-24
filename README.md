@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BingoMap Brasil 🗺️
 
-## Getting Started
+![BingoMap Brasil](https://img.shields.io/badge/BingoMap-Brasil-green)
+![Next.js](https://img.shields.io/badge/Next.js-14-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC)
+![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748)
+![JWT](https://img.shields.io/badge/JWT-Auth-000000)
 
-First, run the development server:
+Uma aplicação interativa com mapa do Brasil, que permite aos usuários gerenciar viewers por estado brasileiro e acompanhar o ranking dos estados mais populares.
 
+## 🌟 Funcionalidades
+
+- **Autenticação Segura**: Sistema de cadastro e login com JWT e proteção de senhas
+- **Mapa Interativo**: Visualize todos os estados brasileiros com dados de viewers em tempo real
+- **Gerenciamento de Viewers**: Adicione e remova viewers para qualquer estado
+- **Ranking de Estados**: Veja quais estados possuem mais viewers em um ranking dinâmico
+- **Design Responsivo**: Interface moderna e adaptada para diferentes tamanhos de tela
+- **Modo Escuro**: Suporte completo para tema claro e escuro
+
+## 🔧 Tecnologias Utilizadas
+
+- **Frontend**:
+  - Next.js 14 com App Router
+  - Tailwind CSS para estilização
+  - HeadlessUI para componentes acessíveis
+  - SVG Maps para renderização do mapa do Brasil
+
+- **Backend**:
+  - API Routes do Next.js
+  - Prisma ORM
+  - SQLite como banco de dados
+  - Autenticação JWT
+
+## 🚀 Começando
+
+### Pré-requisitos
+
+- Node.js 18.x ou superior
+- npm ou yarn
+
+### Instalação
+
+1. Clone o repositório:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <url-do-repositorio>
+cd bingo-map
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instale as dependências:
+```bash
+npm install
+# ou
+yarn
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Configure o banco de dados:
+```bash
+npx prisma generate
+npx prisma migrate dev --name init
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Configure as variáveis de ambiente:
+   - Crie um arquivo `.env` na raiz do projeto com o seguinte conteúdo:
+```
+DATABASE_URL="file:./dev.db"
+JWT_SECRET="sua_chave_secreta_aqui"
+```
 
-## Learn More
+5. Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+# ou
+yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+6. Acesse a aplicação em [http://localhost:3000](http://localhost:3000)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📋 Estrutura do Projeto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+bingo-map/
+├── prisma/          # Definições do schema do Prisma
+├── public/          # Arquivos estáticos
+├── src/
+│   ├── app/         # Rotas e páginas da aplicação
+│   ├── components/  # Componentes React reutilizáveis
+│   ├── context/     # Context API para gerenciamento de estado
+│   └── lib/         # Utilitários e configurações
+```
 
-## Deploy on Vercel
+## 🔐 Autenticação
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+O sistema utiliza autenticação baseada em JWT (JSON Web Tokens):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Registro**: Os novos usuários podem se cadastrar com email e senha
+2. **Login**: Autenticação via email/senha que gera um token JWT
+3. **Proteção de Rotas**: Páginas protegidas redirecionam usuários não autenticados
+4. **Armazenamento Seguro**: Senhas armazenadas com hash bcrypt
+
+## 🗺️ Mapa Interativo
+
+O mapa do Brasil é construído utilizando SVG e permite:
+
+- **Visualização de Estados**: Cada estado é colorido de acordo com o número de viewers
+- **Tooltip Interativo**: Mostra informações do estado ao passar o mouse
+- **Modal de Gerenciamento**: Ao clicar no estado, abre um modal para adicionar/remover viewers
+- **Atualização em Tempo Real**: O mapa é atualizado instantaneamente após modificações
+
+## 🏆 Ranking de Estados
+
+A aplicação mantém um ranking atualizado dos estados com base no número de viewers:
+
+- Ordenação automática dos estados por popularidade
+- Visualização fácil dos estados mais populares
+- Integração com o mapa para um acesso rápido
+
+## 📱 Responsividade
+
+A interface foi desenvolvida seguindo o conceito mobile-first:
+
+- Adaptação automática para diferentes tamanhos de tela
+- Layout otimizado para dispositivos móveis e desktop
+- Interações ajustadas para touch e mouse
+
+## 🧪 Desenvolvimento
+
+- **Desenvolvimento local**: `npm run dev`
+- **Build de produção**: `npm run build`
+- **Iniciar build**: `npm start`
+- **Lint**: `npm run lint`
+
+## 📜 Licença
+
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+## ✨ Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
