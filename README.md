@@ -1,7 +1,7 @@
 # BingoMap Brasil 🗺️
 
 ![BingoMap Brasil](https://img.shields.io/badge/BingoMap-Brasil-green)
-![Next.js](https://img.shields.io/badge/Next.js-14-blue)
+![Next.js](https://img.shields.io/badge/Next.js-15-blue)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC)
 ![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748)
 ![JWT](https://img.shields.io/badge/JWT-Auth-000000)
