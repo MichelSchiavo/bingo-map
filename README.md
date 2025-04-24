@@ -20,7 +20,7 @@ Uma aplicação interativa com mapa do Brasil, que permite aos usuários gerenci
 ## 🔧 Tecnologias Utilizadas
 
 - **Frontend**:
-  - Next.js 14 com App Router
+  - Next.js 15 com App Router
   - Tailwind CSS para estilização
   - HeadlessUI para componentes acessíveis
   - SVG Maps para renderização do mapa do Brasil
